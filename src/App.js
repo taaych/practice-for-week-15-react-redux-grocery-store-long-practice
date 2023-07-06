@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Cart from './components/Cart';
 import ProduceList from './components/ProduceList';
+// import { addToCart } from './store/cartReducer';
 import { populateProduce } from './store/produceReducer';
 
 function App() {
@@ -9,7 +10,11 @@ function App() {
   
   useEffect(() => {
     dispatch(populateProduce());
-    }, []);
+    }, [dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(addToCart(3));
+  // }, [dispatch]);
   
     const [showCart, setShowCart] = useState(false);
   
